@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bosque-dark: #0B1E12;
+  --color-bosque-card: #122D1B;
+  --color-bosque-accent: #1A3D26;
+  --color-dorado-primary: #D9A752;
+  --color-dorado-light: #F4E5C3;
+  --color-crema-bg: #FAF8F5;
+}
