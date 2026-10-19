@@ -80,6 +80,152 @@ import '../styles/global.css';
       </div>
     </section>
 
+    <!-- GRID DE EXPERIENCIAS (5 TARJETAS) -->
+    <section id="experiencias" class="max-w-7xl mx-auto px-6 py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO HOSPEDAJE]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🏡</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Hospedaje</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Cabañas ecológicas inmersas del bosque</p>
+          </div>
+        </div>
+
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO TUCÁN]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🦜</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Flora y fauna</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Especies únicas de la región</p>
+          </div>
+        </div>
+
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO MONO]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🐾</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Santuario de animales</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Protegemos la vida silvestre</p>
+          </div>
+        </div>
+
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO CASCADA]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🌊</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Cascadas y ríos</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Aguas cristalinas y paisajes mágicos</p>
+          </div>
+        </div>
+
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO COMUNIDAD]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">👥</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Comunidad</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Cultura, tradición y gente local</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BANNER PROPÓSITO ECOLÓGICO -->
+      <div class="mt-6 bg-bosque-card/80 border border-white/5 rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 rounded-full bg-bosque-accent flex items-center justify-center text-dorado-primary text-xl">🌱</div>
+          <div>
+            <h4 class="font-['Cinzel'] text-lg text-white">Un lugar para disfrutar y cuidar</h4>
+            <p class="text-xs text-gray-400">Tu visita también apoya a la conservación medioambiental.</p>
+          </div>
+        </div>
+        <a href="#reserva" class="bg-bosque-accent hover:bg-white/10 text-dorado-light border border-dorado-primary/30 px-5 py-2.5 rounded-full text-xs transition whitespace-nowrap">
+          Conoce más →
+        </a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HOSPEDAJE DETALLADO -->
+    <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
+      <div class="flex flex-col md:flex-row justify-between md:items-end mb-8 gap-4">
+        <div>
+          <h2 class="font-['Cinzel'] text-3xl font-normal text-white">Hospedaje</h2>
+          <p class="text-xs text-gray-400 mt-1">Cabañas acogedoras en medio del bosque</p>
+        </div>
+
+        <!-- Filtros Interactivos -->
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button class="filter-btn bg-dorado-primary text-bosque-dark font-semibold px-4 py-1.5 rounded-full transition" data-categoria="todos">Todos</button>
+          <button class="filter-btn bg-bosque-card text-gray-300 hover:text-white px-4 py-1.5 rounded-full border border-white/5 transition" data-categoria="cabanas">Cabañas</button>
+          <button class="filter-btn bg-bosque-card text-gray-300 hover:text-white px-4 py-1.5 rounded-full border border-white/5 transition" data-categoria="habitaciones">Habitaciones</button>
+        </div>
+      </div>
+
+      <!-- Tarjetas Hospedaje -->
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between" data-categoria="cabanas">
+          <div class="h-48 bg-bosque-accent flex items-center justify-center text-xs text-white/30 relative">
+            [FOTO CABAÑA SENDEROS]
+            <span class="absolute top-3 right-3 bg-bosque-dark/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] text-dorado-light border border-white/10">Popular</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Senderos</h3>
+              <p class="text-xs text-gray-400 mt-1">Ideal para familias o grupos de amigos.</p>
+            </div>
+            <div class="flex justify-between items-center mt-6">
+              <div>
+                <span class="text-lg font-bold text-dorado-primary">$70</span>
+                <span class="text-xs text-gray-400">/ noche</span>
+              </div>
+              <button class="btn-reservar-card text-xs text-dorado-light hover:underline font-medium" data-nombre="Cabaña Senderos" data-precio="70">Reservar →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between" data-categoria="cabanas">
+          <div class="h-48 bg-bosque-accent flex items-center justify-center text-xs text-white/30 relative">
+            [FOTO CABAÑA NIDO]
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Nido</h3>
+              <p class="text-xs text-gray-400 mt-1">Perfecta para descanso en parejas.</p>
+            </div>
+            <div class="flex justify-between items-center mt-6">
+              <div>
+                <span class="text-lg font-bold text-dorado-primary">$50</span>
+                <span class="text-xs text-gray-400">/ noche</span>
+              </div>
+              <button class="btn-reservar-card text-xs text-dorado-light hover:underline font-medium" data-nombre="Cabaña Nido" data-precio="50">Reservar →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between" data-categoria="habitaciones">
+          <div class="h-48 bg-bosque-accent flex items-center justify-center text-xs text-white/30 relative">
+            [FOTO SUITE MIRADOR]
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Suite Mirador</h3>
+              <p class="text-xs text-gray-400 mt-1">Vista completa del dosel del bosque.</p>
+            </div>
+            <div class="flex justify-between items-center mt-6">
+              <div>
+                <span class="text-lg font-bold text-dorado-primary">$65</span>
+                <span class="text-xs text-gray-400">/ noche</span>
+              </div>
+              <button class="btn-reservar-card text-xs text-dorado-light hover:underline font-medium" data-nombre="Suite Mirador" data-precio="65">Reservar →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- SANTUARIO DE ANIMALES -->
     <section id="santuario" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -144,8 +290,8 @@ import '../styles/global.css';
               <div>
                 <label class="text-xs text-dorado-light font-medium block mb-2">1. Fechas de entrada y salida</label>
                 <div class="grid grid-cols-2 gap-2">
-                  <input type="date" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
-                  <input type="date" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
+                  <input type="date" id="fecha-entrada" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
+                  <input type="date" id="fecha-salida" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
                 </div>
               </div>
 
@@ -191,8 +337,8 @@ import '../styles/global.css';
             <h3 class="font-['Cinzel'] text-lg text-white mb-4">Resumen de tu reserva</h3>
             <div class="space-y-3 text-xs border-b border-white/10 pb-4">
               <div class="flex justify-between text-gray-300">
-                <span>Cabaña Senderos (2 noches)</span>
-                <span class="text-white font-medium">$140</span>
+                <span id="resumen-nombre">Cabaña Senderos (2 noches)</span>
+                <span id="resumen-precio" class="text-white font-medium">$140</span>
               </div>
               <div class="flex justify-between text-gray-300">
                 <span>Impuestos y conservación</span>
@@ -201,7 +347,7 @@ import '../styles/global.css';
             </div>
             <div class="flex justify-between items-center mt-4">
               <span class="font-semibold text-white text-sm">Total</span>
-              <span class="text-xl font-bold text-dorado-primary">$150</span>
+              <span id="resumen-total" class="text-xl font-bold text-dorado-primary">$150</span>
             </div>
           </div>
 
@@ -218,11 +364,83 @@ import '../styles/global.css';
       <p>© 2026 Reserva Ecológica Valentura. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- JAVASCRIPT INTERACTIVO -->
     <script>
-      const form = document.getElementById('reserva-form');
+      // 1. Navegación fluida
+      const navLinks = document.querySelectorAll('header nav a, a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if (targetId && targetId.startsWith('#')) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // 2. Filtros de Hospedaje
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cardsHospedaje = document.querySelectorAll('.card-hospedaje');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-dorado-primary', 'text-bosque-dark', 'font-semibold');
+            b.classList.add('bg-bosque-card', 'text-gray-300');
+          });
+
+          btn.classList.remove('bg-bosque-card', 'text-gray-300');
+          btn.classList.add('bg-dorado-primary', 'text-bosque-dark', 'font-semibold');
+
+          const categoria = btn.getAttribute('data-categoria');
+          cardsHospedaje.forEach(card => {
+            if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
+              (card as HTMLElement).style.display = 'flex';
+            } else {
+              (card as HTMLElement).style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 3. Selección dinámica de Alojamiento
+      const actionBtns = document.querySelectorAll('.btn-reservar-card');
+      actionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const nombreAlojamiento = btn.getAttribute('data-nombre') || 'alojamiento';
+          const precio = btn.getAttribute('data-precio') || '0';
+          
+          const sectionReserva = document.querySelector('#reserva');
+          sectionReserva?.scrollIntoView({ behavior: 'smooth' });
+
+          const elementoNombre = document.getElementById('resumen-nombre');
+          const elementoPrecio = document.getElementById('resumen-precio');
+          const elementoTotal = document.getElementById('resumen-total');
+
+          if (elementoNombre && elementoPrecio && elementoTotal) {
+            elementoNombre.textContent = `${nombreAlojamiento} (2 noches)`;
+            const subtotal = parseInt(precio) * 2;
+            elementoPrecio.textContent = `$${subtotal}`;
+            elementoTotal.textContent = `$${subtotal + 10}`;
+          }
+        });
+      });
+
+      // 4. Confirmación de Reserva
+      const form = document.getElementById('reserva-form') as HTMLFormElement;
       form?.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('¡Reserva confirmada con éxito!');
+        const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
+        const fechaSalida = (document.getElementById('fecha-salida') as HTMLInputElement)?.value;
+
+        if (!fechaEntrada || !fechaSalida) {
+          alert('Por favor selecciona las fechas de entrada y salida.');
+          return;
+        }
+
+        alert(`¡Reserva confirmada con éxito!\n\nFecha de Entrada: ${fechaEntrada}\nFecha de Salida: ${fechaSalida}`);
       });
     </script>
   </body>
