@@ -9,7 +9,9 @@
   --color-crema-bg: #f9f6f0;
 }
 
-body {
-  background-color: var(--color-bosque-dark);
-  color: #ffffff;
+@layer base {
+  body {
+    background-color: var(--color-bosque-dark);
+    color: #ffffff;
+  }
 }
