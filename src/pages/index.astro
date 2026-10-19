@@ -2,73 +2,83 @@
 import '../styles/global.css';
 ---
 
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserva Ecológica Valentura</title>
+    <!-- Fuentes elegantes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-bosque-dark text-white font-['Plus_Jakarta_Sans',sans-serif] antialiased min-h-screen">
+  <body class="bg-bosque-dark text-white font-['Plus_Jakarta_Sans',sans-serif] antialiased min-h-screen selection:bg-dorado-primary selection:text-bosque-dark">
 
-    <!-- NAV BAR -->
-    <header class="border-b border-white/10 backdrop-blur-md bg-bosque-dark/80 sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- NAVBAR PRINCIPAL -->
+    <header class="border-b border-white/10 backdrop-blur-md bg-bosque-dark/90 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
+        <!-- Logo -->
         <div class="flex items-center space-x-3">
-          <div class="w-8 h-8 bg-dorado-primary rounded-full flex items-center justify-center text-bosque-dark font-bold">🌿</div>
-          <span class="font-['Cinzel'] tracking-wider text-lg font-bold text-dorado-light">
-            RESERVA ECOLÓGICA<br/><span class="text-xs text-dorado-primary tracking-widest block -mt-1">VALENTURA</span>
-          </span>
+          <div class="w-8 h-8 rounded-full border border-dorado-primary/40 flex items-center justify-center text-dorado-primary text-sm font-bold bg-bosque-accent">
+            🌿
+          </div>
+          <div>
+            <span class="font-['Cinzel'] tracking-widest text-xs uppercase block text-gray-300 font-semibold">Reserva Ecológica</span>
+            <span class="font-['Cinzel'] text-base tracking-widest text-dorado-primary font-bold block -mt-1">VALENTURA</span>
+          </div>
         </div>
 
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-light text-gray-300">
-          <a href="#inicio" class="text-dorado-primary font-normal">Inicio</a>
+        <!-- Menú de Navegación -->
+        <nav class="hidden md:flex items-center space-x-8 text-xs font-light text-gray-300 uppercase tracking-wider">
+          <a href="#inicio" class="text-dorado-primary border-b border-dorado-primary pb-0.5">Inicio</a>
           <a href="#hospedaje" class="hover:text-dorado-light transition">Alojamiento</a>
           <a href="#experiencias" class="hover:text-dorado-light transition">Experiencias</a>
           <a href="#reserva" class="hover:text-dorado-light transition">Reserva</a>
           <a href="#comunidad" class="hover:text-dorado-light transition">Comunidad</a>
         </nav>
 
+        <!-- Iconos y Acciones -->
         <div class="flex items-center space-x-4 text-dorado-light text-sm">
-          <button title="Buscar" class="hover:text-white">🔍</button>
-          <button title="Favoritos" class="hover:text-white">🤍</button>
-          <button class="md:hidden text-xl">☰</button>
+          <button title="Buscar" class="hover:text-white transition">🔍</button>
+          <button title="Favoritos" class="hover:text-white transition">🤍</button>
+          <button class="md:hidden text-lg">☰</button>
         </div>
       </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section id="inicio" class="relative min-h-[85vh] flex items-center px-6 py-12">
-      <div class="absolute inset-0 bg-gradient-to-r from-bosque-dark via-bosque-dark/80 to-transparent z-10"></div>
-      <div class="absolute inset-0 bg-bosque-accent/40 z-0 flex items-center justify-center text-white/20 text-2xl font-bold">
-        [IMAGEN DE FONDO HERO - PENDIENTE]
+    <section id="inicio" class="relative min-h-[75vh] flex items-center px-6 py-12 border-b border-white/5 overflow-hidden">
+      <!-- Placeholder Fondo Hero -->
+      <div class="absolute inset-0 bg-gradient-to-r from-bosque-dark via-bosque-dark/85 to-transparent z-10"></div>
+      <div class="absolute inset-0 bg-bosque-accent/30 z-0 flex items-center justify-center text-white/10 text-xl font-bold tracking-widest uppercase">
+        [IMAGEN DE FONDO HERO - PAISAJE RESERVA]
       </div>
 
-      <div class="max-w-7xl mx-auto w-full relative z-20 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <span class="text-dorado-light text-sm tracking-widest uppercase mb-2 block font-light">Bienvenidos a la</span>
-          <h1 class="font-['Cinzel'] text-4xl lg:text-6xl font-bold text-white leading-tight mb-4">
-            Reserva Ecológica <span class="text-dorado-primary italic">Valentura</span>
+      <div class="max-w-7xl mx-auto w-full relative z-20 grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-8">
+          <span class="text-dorado-light text-xs tracking-widest uppercase mb-2 block font-light">Bienvenidos a la</span>
+          <h1 class="font-['Cinzel'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight mb-3">
+            Reserva Ecológica <br/>
+            <span class="text-dorado-primary font-semibold italic">Valentura</span>
           </h1>
-          <p class="text-gray-300 text-lg mb-8 max-w-md font-light">
+          <p class="text-gray-300 text-sm sm:text-base mb-8 max-w-lg font-light leading-relaxed">
             Naturaleza, aventura y vida silvestre en un solo lugar.
           </p>
-          <a href="#reserva" class="inline-flex items-center gap-2 bg-dorado-primary hover:bg-dorado-light text-bosque-dark px-6 py-3 rounded-full font-medium transition duration-300 shadow-lg">
-            Explorar la reserva <span>→</span>
+          <a href="#reserva" class="inline-flex items-center gap-3 bg-dorado-primary hover:bg-dorado-light text-bosque-dark px-6 py-3 rounded-full text-xs font-semibold tracking-wide transition duration-300 shadow-xl">
+            Explorar la reserva <span class="text-sm">→</span>
           </a>
         </div>
 
-        <div class="justify-self-end hidden md:block">
-          <div class="bg-bosque-card/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center space-x-4 shadow-2xl">
-            <div class="text-dorado-primary text-2xl">📍</div>
+        <!-- Tarjeta Flotante Ubicación -->
+        <div class="md:col-span-4 justify-self-end w-full max-w-xs">
+          <div class="bg-bosque-card/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center space-x-3.5 shadow-2xl">
+            <div class="w-10 h-10 rounded-xl bg-bosque-accent flex items-center justify-center text-dorado-primary text-lg border border-white/5">📍</div>
             <div class="text-xs">
-              <p class="font-semibold text-white">Mindo, Ecuador</p>
-              <p class="text-gray-400">San Miguel de los Bancos</p>
-              <div class="flex items-center gap-1 mt-1 text-dorado-primary">
-                <span>4.9</span> <span>★★★★★</span> <span class="text-gray-400">(reseñas)</span>
+              <p class="font-medium text-white">Mindo, Ecuador</p>
+              <p class="text-gray-400 text-[11px]">San Miguel de los Bancos</p>
+              <div class="flex items-center gap-1 mt-1 text-dorado-primary text-[11px]">
+                <span class="font-bold">4.9</span> <span>★★★★★</span> <span class="text-gray-400 font-normal">(reseñas)</span>
               </div>
             </div>
           </div>
@@ -76,58 +86,230 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- TARJETAS DE EXPERIENCIAS -->
-    <section id="experiencias" class="max-w-7xl mx-auto px-6 py-12">
+    <!-- GRID DE EXPERIENCIAS (5 TARJETAS) -->
+    <section id="experiencias" class="max-w-7xl mx-auto px-6 py-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/40 transition group cursor-pointer h-64 relative overflow-hidden">
-          <div class="absolute inset-0 bg-bosque-accent/30 flex items-center justify-center text-xs text-white/30">[FOTO HOSPEDAJE]</div>
-          <div class="relative z-10"><span class="text-xl">🏡</span></div>
-          <div class="relative z-10">
-            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Hospedaje</h3>
-            <p class="text-xs text-gray-400 mt-1">Cabañas ecológicas inmersas en el bosque.</p>
+        
+        <!-- 1. Hospedaje -->
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO HOSPEDAJE]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🏡</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Hospedaje</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Cabañas ecológicas inmersas del bosque</p>
           </div>
         </div>
 
-        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/40 transition group cursor-pointer h-64 relative overflow-hidden">
-          <div class="absolute inset-0 bg-bosque-accent/30 flex items-center justify-center text-xs text-white/30">[FOTO TUCÁN]</div>
-          <div class="relative z-10"><span class="text-xl">🦜</span></div>
-          <div class="relative z-10">
-            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Flora y fauna</h3>
-            <p class="text-xs text-gray-400 mt-1">Especies únicas de la región.</p>
+        <!-- 2. Flora y fauna -->
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO TUCÁN]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🦜</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Flora y fauna</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Especies únicas de la región</p>
           </div>
         </div>
 
-        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/40 transition group cursor-pointer h-64 relative overflow-hidden">
-          <div class="absolute inset-0 bg-bosque-accent/30 flex items-center justify-center text-xs text-white/30">[FOTO ANIMALES]</div>
-          <div class="relative z-10"><span class="text-xl">🐾</span></div>
-          <div class="relative z-10">
-            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Santuario de animales</h3>
-            <p class="text-xs text-gray-400 mt-1">Protegemos la vida silvestre.</p>
+        <!-- 3. Santuario de animales -->
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO MONO]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🐾</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Santuario de animales</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Protegemos la vida silvestre</p>
           </div>
         </div>
 
-        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/40 transition group cursor-pointer h-64 relative overflow-hidden">
-          <div class="absolute inset-0 bg-bosque-accent/30 flex items-center justify-center text-xs text-white/30">[FOTO CASCADA]</div>
-          <div class="relative z-10"><span class="text-xl">🌊</span></div>
-          <div class="relative z-10">
-            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cascadas y ríos</h3>
-            <p class="text-xs text-gray-400 mt-1">Aguas cristalinas y paisajes mágicos.</p>
+        <!-- 4. Cascadas y ríos -->
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO CASCADA]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">🌊</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Cascadas y ríos</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Aguas cristalinas y paisajes mágicos</p>
           </div>
         </div>
 
-        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/40 transition group cursor-pointer h-64 relative overflow-hidden">
-          <div class="absolute inset-0 bg-bosque-accent/30 flex items-center justify-center text-xs text-white/30">[FOTO COMUNIDAD]</div>
-          <div class="relative z-10"><span class="text-xl">👥</span></div>
-          <div class="relative z-10">
-            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Comunidad</h3>
-            <p class="text-xs text-gray-400 mt-1">Cultura, tradición y gente local.</p>
+        <!-- 5. Comunidad -->
+        <div class="bg-bosque-card border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[220px] relative overflow-hidden">
+          <div class="absolute inset-0 bg-bosque-accent/20 flex items-center justify-center text-[10px] text-white/20 uppercase tracking-widest">[FOTO COMUNIDAD]</div>
+          <div class="relative z-10 w-8 h-8 rounded-lg bg-bosque-dark/80 flex items-center justify-center text-sm border border-white/10">👥</div>
+          <div class="relative z-10 mt-6">
+            <h3 class="font-semibold text-sm text-white group-hover:text-dorado-primary transition">Comunidad</h3>
+            <p class="text-[11px] text-gray-400 mt-1 leading-snug">Cultura, tradición y gente local</p>
           </div>
         </div>
+
+      </div>
+
+      <!-- BANNER PROPÓSITO ECOLÓGICO -->
+      <div class="mt-6 bg-bosque-card/80 border border-white/5 rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 rounded-full bg-bosque-accent flex items-center justify-center text-dorado-primary text-xl">🌱</div>
+          <div>
+            <h4 class="font-['Cinzel'] text-lg text-white">Un lugar para disfrutar y cuidar</h4>
+            <p class="text-xs text-gray-400">Tu visita también apoya a la conservación medioambiental.</p>
+          </div>
+        </div>
+        <a href="#reserva" class="bg-bosque-accent hover:bg-white/10 text-dorado-light border border-dorado-primary/30 px-5 py-2.5 rounded-full text-xs transition whitespace-nowrap">
+          Conoce más →
+        </a>
       </div>
     </section>
 
-    <footer class="border-t border-white/10 bg-bosque-dark/90 py-8 px-6 text-center text-xs text-gray-500">
+    <!-- SECCIÓN HOSPEDAJE DETALLADO -->
+    <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
+      <div class="flex flex-col md:flex-row justify-between md:items-end mb-8 gap-4">
+        <div>
+          <h2 class="font-['Cinzel'] text-3xl font-normal text-white">Hospedaje</h2>
+          <p class="text-xs text-gray-400 mt-1">Cabañas acogedoras en medio del bosque</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button class="bg-dorado-primary text-bosque-dark font-medium px-4 py-1.5 rounded-full">Todos</button>
+          <button class="bg-bosque-card hover:bg-bosque-accent text-gray-300 px-4 py-1.5 rounded-full border border-white/5 transition">Cabañas</button>
+          <button class="bg-bosque-card hover:bg-bosque-accent text-gray-300 px-4 py-1.5 rounded-full border border-white/5 transition">Habitaciones</button>
+          <button class="bg-bosque-card hover:bg-bosque-accent text-gray-300 px-4 py-1.5 rounded-full border border-white/5 transition">Servicios</button>
+        </div>
+      </div>
+
+      <!-- Tarjetas Hospedaje -->
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Cabaña 1 -->
+        <div class="bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group">
+          <div class="h-48 bg-bosque-accent flex items-center justify-center text-xs text-white/30 relative">
+            [FOTO CABAÑA SENDEROS]
+            <span class="absolute top-3 right-3 bg-bosque-dark/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] text-dorado-light border border-white/10">Popular</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Senderos</h3>
+            <p class="text-xs text-gray-400 mt-1">Ideal para familias o grupos de amigos.</p>
+            <div class="flex justify-between items-center mt-6">
+              <div>
+                <span class="text-lg font-bold text-dorado-primary">$70</span>
+                <span class="text-xs text-gray-400">/ noche</span>
+              </div>
+              <button class="text-xs text-dorado-light hover:underline font-medium">Ver detalles →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cabaña 2 -->
+        <div class="bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group">
+          <div class="h-48 bg-bosque-accent flex items-center justify-center text-xs text-white/30 relative">
+            [FOTO CABAÑA NIDO]
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Nido</h3>
+            <p class="text-xs text-gray-400 mt-1">Perfecta para descanso en parejas.</p>
+            <div class="flex justify-between items-center mt-6">
+              <div>
+                <span class="text-lg font-bold text-dorado-primary">$50</span>
+                <span class="text-xs text-gray-400">/ noche</span>
+              </div>
+              <button class="text-xs text-dorado-light hover:underline font-medium">Ver detalles →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cabaña 3 -->
+        <div class="bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group">
+          <div class="h-48 bg-bosque-accent flex items-center justify-center text-xs text-white/30 relative">
+            [FOTO CABAÑA BOSQUE]
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Mirador</h3>
+            <p class="text-xs text-gray-400 mt-1">Vista completa del dosel del bosque.</p>
+            <div class="flex justify-between items-center mt-6">
+              <div>
+                <span class="text-lg font-bold text-dorado-primary">$65</span>
+                <span class="text-xs text-gray-400">/ noche</span>
+              </div>
+              <button class="text-xs text-dorado-light hover:underline font-medium">Ver detalles →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE RESERVA MULTI-PASO -->
+    <section id="reserva" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
+      <div class="bg-bosque-card/90 rounded-3xl p-8 border border-white/10 shadow-2xl">
+        <h2 class="font-['Cinzel'] text-2xl font-normal text-white mb-1">Reserva tu experiencia</h2>
+        <p class="text-xs text-gray-400 mb-8">Elige las fechas y asegura tu estancia en la Reserva Ecológica Valentura.</p>
+
+        <!-- Indicador de Pasos -->
+        <div class="flex items-center justify-between max-w-xl mb-8 text-xs">
+          <div class="flex items-center space-x-2 text-dorado-primary font-semibold">
+            <span class="w-6 h-6 rounded-full bg-dorado-primary text-bosque-dark flex items-center justify-center text-[11px]">1</span>
+            <span>Fechas</span>
+          </div>
+          <div class="h-px bg-white/10 flex-1 mx-3"></div>
+          <div class="flex items-center space-x-2 text-gray-400">
+            <span class="w-6 h-6 rounded-full bg-bosque-accent flex items-center justify-center text-[11px] border border-white/10">2</span>
+            <span>Huéspedes</span>
+          </div>
+          <div class="h-px bg-white/10 flex-1 mx-3"></div>
+          <div class="flex items-center space-x-2 text-gray-400">
+            <span class="w-6 h-6 rounded-full bg-bosque-accent flex items-center justify-center text-[11px] border border-white/10">3</span>
+            <span>Alojamiento</span>
+          </div>
+          <div class="h-px bg-white/10 flex-1 mx-3"></div>
+          <div class="flex items-center space-x-2 text-gray-400">
+            <span class="w-6 h-6 rounded-full bg-bosque-accent flex items-center justify-center text-[11px] border border-white/10">4</span>
+            <span>Pago</span>
+          </div>
+        </div>
+
+        <form id="reserva-form" class="grid md:grid-cols-3 gap-6">
+          <div class="space-y-2">
+            <label class="text-xs text-dorado-light font-medium block">1. Selecciona tus fechas</label>
+            <div class="grid grid-cols-2 gap-2">
+              <input type="date" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
+              <input type="date" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-xs text-dorado-light font-medium block">2. Huéspedes</label>
+            <div class="grid grid-cols-2 gap-2">
+              <select class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-dorado-primary">
+                <option>1 Adulto</option>
+                <option selected>2 Adultos</option>
+                <option>3+ Adultos</option>
+              </select>
+              <select class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-dorado-primary">
+                <option>0 Niños</option>
+                <option>1 Niño</option>
+                <option>2 Niños</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex items-end">
+            <button type="submit" class="w-full bg-dorado-primary hover:bg-dorado-light text-bosque-dark py-3 rounded-xl text-xs font-bold tracking-wide transition shadow-lg">
+              Buscar disponibilidad →
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-bosque-dark py-8 px-6 text-center text-xs text-gray-500">
       <p>© 2026 Reserva Ecológica Valentura. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- SCRIPT DE NAVEGACIÓN -->
+    <script>
+      const form = document.getElementById('reserva-form');
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('¡Búsqueda de disponibilidad realizada!');
+      });
+    </script>
   </body>
 </html>
