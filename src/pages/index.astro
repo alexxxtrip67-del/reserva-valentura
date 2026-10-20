@@ -5,7 +5,6 @@ import '../styles/global.css';
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <!-- Usamos el logo también como favicon -->
     <link rel="icon" type="image/jpg" href="/logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserva Ecológica Valentura</title>
@@ -13,13 +12,12 @@ import '../styles/global.css';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-bosque-dark text-white font-['Plus_Jakarta_Sans',sans-serif] antialiased min-h-screen selection:bg-dorado-primary selection:text-bosque-dark relative">
+  <body class="bg-bosque-dark text-white font-['Plus_Jakarta_Sans',sans-serif] antialiased min-h-screen selection:bg-dorado-primary selection:text-bosque-dark">
 
     <!-- NAVBAR CON LOGO OFICIAL -->
     <header class="border-b border-white/10 backdrop-blur-md bg-bosque-dark/90 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
         
-        <!-- Logo de Valentura -->
         <a href="#inicio" class="flex items-center space-x-3 group">
           <img 
             src="/logo.jpg" 
@@ -32,7 +30,6 @@ import '../styles/global.css';
           </div>
         </a>
 
-        <!-- Menú de Navegación -->
         <nav class="hidden md:flex items-center space-x-8 text-xs font-light text-gray-300 uppercase tracking-wider">
           <a href="#inicio" class="text-dorado-primary border-b border-dorado-primary pb-0.5">Inicio</a>
           <a href="#hospedaje" class="hover:text-dorado-light transition">Alojamiento</a>
@@ -49,16 +46,14 @@ import '../styles/global.css';
       </div>
     </header>
 
-    <!-- HERO SECTION CON IMAGEN DE FONDO REAL -->
+    <!-- HERO SECTION CON IMAGEN DE FONDO LOCAL DE LA CARPETA PUBLIC -->
     <section id="inicio" class="relative min-h-[75vh] flex items-center px-6 py-12 border-b border-white/5 overflow-hidden">
-      <!-- Imagen de Fondo: Usamos una imagen profesional de bosque nublado panorámico -->
       <img 
-        src="https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=1920&q=80" 
+        src="/hero-background-ia.jpg" 
         alt="Paisaje de la Reserva Ecológica Valentura" 
         class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-[0.7]" 
       />
       
-      <!-- Overlay Degradado para legibilidad del texto (crucial para el diseño) -->
       <div class="absolute inset-0 bg-gradient-to-r from-bosque-dark/95 via-bosque-dark/80 to-transparent z-10"></div>
 
       <div class="max-w-7xl mx-auto w-full relative z-20 grid md:grid-cols-12 gap-8 items-center">
@@ -77,7 +72,6 @@ import '../styles/global.css';
         </div>
 
         <div class="md:col-span-4 justify-self-end w-full max-w-xs">
-          <!-- Tarjeta interactiva para abrir reseñas -->
           <div id="open-resenas-hero" class="bg-bosque-card/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center space-x-3.5 shadow-2xl cursor-pointer hover:border-dorado-primary/50 transition group">
             <div class="w-10 h-10 rounded-xl bg-bosque-accent flex items-center justify-center text-dorado-primary text-lg border border-white/5 group-hover:scale-110 transition">📍</div>
             <div class="text-xs">
@@ -368,7 +362,7 @@ import '../styles/global.css';
       <p>© 2026 Reserva Ecológica Valentura. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- MODAL DE RESEÑAS Y TESTIMONIOS (Mantenemos la funcionalidad interactiva) -->
+    <!-- MODAL DE RESEÑAS Y TESTIMONIOS -->
     <div id="modal-resenas" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-lg rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         <button id="close-modal-resenas" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold">✕</button>
@@ -401,12 +395,11 @@ import '../styles/global.css';
       </div>
     </div>
 
-    <!-- JAVASCRIPT INTERACTIVO COMPLETO -->
+    <!-- JAVASCRIPT INTERACTIVO -->
     <script>
       let alojamientoSeleccionado = 'Cabaña Familiar Bosque';
       let precioSeleccionado = 70;
 
-      // Navegación fluida
       const navLinks = document.querySelectorAll('header nav a, a[href^="#"]');
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -418,7 +411,6 @@ import '../styles/global.css';
         });
       });
 
-      // Filtros de Hospedaje
       const filterBtns = document.querySelectorAll('.filter-btn');
       const cardsHospedaje = document.querySelectorAll('.card-hospedaje');
       filterBtns.forEach(btn => {
@@ -427,16 +419,16 @@ import '../styles/global.css';
           btn.classList.add('bg-dorado-primary', 'text-bosque-dark', 'font-semibold');
           const categoria = btn.getAttribute('data-categoria');
           cardsHospedaje.forEach(card => {
+            const el = card as HTMLElement;
             if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
-              (card as HTMLElement).style.display = 'flex';
+              el.style.display = 'flex';
             } else {
-              (card as HTMLElement).style.display = 'none';
+              el.style.display = 'none';
             }
           });
         });
       });
 
-      // Selección de Alojamiento
       const actionBtns = document.querySelectorAll('.btn-reservar-card');
       actionBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -452,38 +444,74 @@ import '../styles/global.css';
         });
       });
 
-      // WhatsApp con Número Oficial Configurado
       document.getElementById('btn-whatsapp-reserva')?.addEventListener('click', () => {
         const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
         const fechaSalida = (document.getElementById('fecha-salida') as HTMLInputElement)?.value;
         const adultos = (document.getElementById('adultos-select') as HTMLSelectElement)?.value;
         const ninos = (document.getElementById('ninos-select') as HTMLSelectElement)?.value;
         const metodoPago = (document.querySelector('input[name="pago"]:checked') as HTMLInputElement)?.value || 'Por definir';
-        if (!fechaEntrada || !fechaSalida) return alert('Selecciona fechas.');
-        const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nReserva:\n🏡 Alojamiento: ${alojamientoSeleccionado}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Pago: ${metodoPago}\n💰 Total: $${precioSeleccionado * 2 + 10}`;
+        if (!fechaEntrada || !fechaSalida) {
+          alert('Por favor selecciona las fechas de entrada y salida.');
+          return;
+        }
+        const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 Alojamiento: ${alojamientoSeleccionado}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Método de Pago: ${metodoPago}\n💰 Total Estimado: $${precioSeleccionado * 2 + 10}\n\n¿Tienen disponibilidad para estas fechas?`;
         window.open(`https://wa.me/593995617678?text=${encodeURIComponent(mensaje)}`, '_blank');
       });
 
-      // Sistema de Reseñas Interactivo
       const modalResenas = document.getElementById('modal-resenas');
       const contenedorResenas = document.getElementById('contenedor-resenas-lista');
       const formResena = document.getElementById('form-nueva-resena') as HTMLFormElement;
       let calificacionSeleccionada = 5;
-      let listaResenas = JSON.parse(localStorage.getItem('valentura_resenas') || '[]').length ? JSON.parse(localStorage.getItem('valentura_resenas')) : [
-        { nombre: 'Carlos Mendoza', estrellas: 5, comentario: 'Una experiencia increíble.' },
-        { nombre: 'Sofía & Andrés', estrellas: 5, comentario: 'Excelente atención de la comunidad.' }
+      
+      const resenasGuardadas = localStorage.getItem('valentura_resenas');
+      let listaResenas = resenasGuardadas ? JSON.parse(resenasGuardadas) : [
+        { nombre: 'Carlos Mendoza', estrellas: 5, comentario: 'Una experiencia increíble. La cabaña es muy cómoda.' },
+        { nombre: 'Sofía & Andrés', estrellas: 5, comentario: 'Excelente atención de la comunidad local.' }
       ];
+
       function renderizarResenas() {
         if (!contenedorResenas) return;
         contenedorResenas.innerHTML = '';
-        listaResenas.forEach((resena: any) => {
+        listaResenas.forEach((resena: { nombre: string; estrellas: number; comentario: string }) => {
           contenedorResenas.innerHTML += `<div class="bg-bosque-dark/80 p-3 rounded-xl border border-white/5 text-xs"><div class="flex justify-between items-center mb-1"><span class="font-semibold text-white">${resena.nombre}</span><span class="text-dorado-primary">${'★'.repeat(resena.estrellas)}</span></div><p class="text-gray-300 font-light">${resena.comentario}</p></div>`;
         });
       }
-      document.getElementById('open-resenas-hero')?.addEventListener('click', () => { renderizarResenas(); modalResenas?.classList.remove('hidden'); modalResenas?.classList.add('flex'); });
+
+      document.getElementById('open-resenas-hero')?.addEventListener('click', () => { 
+        renderizarResenas(); 
+        modalResenas?.classList.remove('hidden'); 
+        modalResenas?.classList.add('flex'); 
+      });
+
       document.getElementById('close-modal-resenas')?.addEventListener('click', () => modalResenas?.classList.add('hidden'));
-      document.querySelectorAll('#selector-estrellas .star').forEach(star => star.addEventListener('click', () => { calificacionSeleccionada = parseInt(star.getAttribute('data-rating') || '5'); document.querySelectorAll('#selector-estrellas .star').forEach((s, idx) => idx < calificacionSeleccionada ? (s.classList.add('text-dorado-primary'), s.classList.remove('opacity-50')) : (s.classList.remove('text-dorado-primary'), s.classList.add('opacity-50'))); }));
-      formResena?.addEventListener('submit', (e) => { e.preventDefault(); const nombre = (document.getElementById('nombre-resena') as HTMLInputElement).value; const comentario = (document.getElementById('comentario-resena') as HTMLTextAreaElement).value; if(!nombre || !comentario) return; listaResenas.unshift({ nombre, estrellas: calificacionSeleccionada, comentario }); localStorage.setItem('valentura_resenas', JSON.stringify(listaResenas)); renderizarResenas(); formResena.reset(); alert('Reseña publicada.'); });
+
+      document.querySelectorAll('#selector-estrellas .star').forEach(star => {
+        star.addEventListener('click', () => { 
+          calificacionSeleccionada = parseInt(star.getAttribute('data-rating') || '5'); 
+          document.querySelectorAll('#selector-estrellas .star').forEach((s, idx) => {
+            if (idx < calificacionSeleccionada) {
+              s.classList.add('text-dorado-primary');
+              s.classList.remove('opacity-50');
+            } else {
+              s.classList.remove('text-dorado-primary');
+              s.classList.add('opacity-50');
+            }
+          }); 
+        });
+      });
+
+      formResena?.addEventListener('submit', (e) => { 
+        e.preventDefault(); 
+        const nombreInput = (document.getElementById('nombre-resena') as HTMLInputElement);
+        const comentarioInput = (document.getElementById('comentario-resena') as HTMLTextAreaElement);
+        if(!nombreInput?.value || !comentarioInput?.value) return; 
+        
+        listaResenas.unshift({ nombre: nombreInput.value, estrellas: calificacionSeleccionada, comentario: comentarioInput.value }); 
+        localStorage.setItem('valentura_resenas', JSON.stringify(listaResenas)); 
+        renderizarResenas(); 
+        formResena.reset(); 
+        alert('¡Gracias! Tu reseña ha sido publicada.'); 
+      });
     </script>
   </body>
 </html>
