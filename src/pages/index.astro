@@ -381,7 +381,7 @@ import '../styles/global.css';
       <p>© 2026 Reserva Ecológica Valentura. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- JAVASCRIPT INTERACTIVO CON INTEGRACIÓN A WHATSAPP -->
+    <!-- JAVASCRIPT INTERACTIVO CON NÚMERO DE WHATSAPP CONFIGURADO -->
     <script>
       let alojamientoSeleccionado = 'Cabaña Familiar Bosque';
       let precioSeleccionado = 70;
@@ -448,7 +448,7 @@ import '../styles/global.css';
         });
       });
 
-      // 4. Lógica para Enviar Reserva por WhatsApp
+      // 4. Redirección Directa a WhatsApp con Datos
       const btnWhatsapp = document.getElementById('btn-whatsapp-reserva');
       btnWhatsapp?.addEventListener('click', () => {
         const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
@@ -466,11 +466,10 @@ import '../styles/global.css';
         const subtotal = precioSeleccionado * 2;
         const total = subtotal + 10;
 
-        // Construcción del mensaje predefinido
-        const mensaje = `Hola *Reserva Ecológica Valentura* 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 *Alojamiento:* ${alojamientoSeleccionado}\n📅 *Entrada:* ${fechaEntrada}\n📅 *Salida:* ${fechaSalida}\n👥 *Huéspedes:* ${adultos}, ${ninos}\n💳 *Método de Pago:* ${metoPago}\n💰 *Total Estímado:* $${total}\n\n¿Tienen disponibilidad para esas fechas?`;
+        const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 Alojamiento: ${alojamientoSeleccionado}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Método de Pago: ${metodoPago}\n💰 Total Estimado: $${total}\n\n¿Tienen disponibilidad para estas fechas?`;
 
-        // Número telefónico de WhatsApp de la reserva (modifica si es necesario)
-        const numeroTelefono = "593999999999"; 
+        // Número oficial de Ecuador: +593995617678
+        const numeroTelefono = "593995617678"; 
         const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(urlWhatsApp, '_blank');
