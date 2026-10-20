@@ -71,13 +71,16 @@ import '../styles/global.css';
         </div>
 
         <div class="md:col-span-4 justify-self-end w-full max-w-xs">
-          <div class="bg-bosque-card/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center space-x-3.5 shadow-2xl">
-            <div class="w-10 h-10 rounded-xl bg-bosque-accent flex items-center justify-center text-dorado-primary text-lg border border-white/5">📍</div>
+          <!-- Tarjeta con clic interactivo para abrir reseñas -->
+          <div id="open-resenas-hero" class="bg-bosque-card/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center space-x-3.5 shadow-2xl cursor-pointer hover:border-dorado-primary/50 transition group">
+            <div class="w-10 h-10 rounded-xl bg-bosque-accent flex items-center justify-center text-dorado-primary text-lg border border-white/5 group-hover:scale-110 transition">📍</div>
             <div class="text-xs">
               <p class="font-medium text-white">Mindo, Ecuador</p>
               <p class="text-gray-400 text-[11px]">San Miguel de los Bancos</p>
               <div class="flex items-center gap-1 mt-1 text-dorado-primary text-[11px]">
-                <span class="font-bold">4.9</span> <span>★★★★★</span> <span class="text-gray-400 font-normal">(reseñas)</span>
+                <span id="puntuacion-promedio-hero" class="font-bold">4.9</span> 
+                <span>★★★★★</span> 
+                <span class="text-gray-400 font-normal hover:underline">(dejar reseña)</span>
               </div>
             </div>
           </div>
@@ -381,7 +384,56 @@ import '../styles/global.css';
       <p>© 2026 Reserva Ecológica Valentura. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- JAVASCRIPT INTERACTIVO CON NÚMERO DE WHATSAPP CONFIGURADO -->
+    <!-- MODAL DE RESEÑAS Y TESTIMONIOS -->
+    <div id="modal-resenas" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+      <div class="bg-bosque-card border border-white/10 w-full max-w-lg rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        
+        <!-- Botón Cerrar -->
+        <button id="close-modal-resenas" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold">✕</button>
+
+        <h3 class="font-['Cinzel'] text-xl text-white mb-1">Opiniones de Visitantes</h3>
+        <p class="text-xs text-gray-400 mb-6">Comparte tu experiencia en Reserva Ecológica Valentura</p>
+
+        <!-- Formulario para agregar Reseña -->
+        <form id="form-nueva-resena" class="bg-bosque-dark p-4 rounded-2xl border border-white/5 mb-6 space-y-3">
+          <h4 class="text-xs font-semibold text-dorado-light uppercase tracking-wider">Escribir una reseña</h4>
+          
+          <div>
+            <label class="text-[11px] text-gray-300 block mb-1">Calificación:</label>
+            <div class="flex gap-2 text-xl cursor-pointer" id="selector-estrellas">
+              <span data-rating="1" class="star hover:scale-110 transition opacity-50">★</span>
+              <span data-rating="2" class="star hover:scale-110 transition opacity-50">★</span>
+              <span data-rating="3" class="star hover:scale-110 transition opacity-50">★</span>
+              <span data-rating="4" class="star hover:scale-110 transition opacity-50">★</span>
+              <span data-rating="5" class="star hover:scale-110 transition text-dorado-primary">★</span>
+            </div>
+          </div>
+
+          <div>
+            <input type="text" id="nombre-resena" placeholder="Tu Nombre" class="w-full bg-bosque-card border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary" required />
+          </div>
+
+          <div>
+            <textarea id="comentario-resena" rows="2" placeholder="Cuéntanos tu experiencia en la reserva..." class="w-full bg-bosque-card border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary" required></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-dorado-primary hover:bg-dorado-light text-bosque-dark py-2 rounded-xl text-xs font-bold transition">
+            Publicar Reseña
+          </button>
+        </form>
+
+        <!-- Lista de Reseñas Publicadas -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Reseñas recientes</h4>
+          <div id="contenedor-resenas-lista" class="space-y-3 max-h-60 overflow-y-auto pr-1">
+            <!-- Las reseñas se inyectan dinámicamente aquí -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERACTIVO CON SCRIPT DE RESEÑAS -->
     <script>
       let alojamientoSeleccionado = 'Cabaña Familiar Bosque';
       let precioSeleccionado = 70;
@@ -468,26 +520,93 @@ import '../styles/global.css';
 
         const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 Alojamiento: ${alojamientoSeleccionado}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Método de Pago: ${metodoPago}\n💰 Total Estimado: $${total}\n\n¿Tienen disponibilidad para estas fechas?`;
 
-        // Número oficial de Ecuador: +593995617678
         const numeroTelefono = "593995617678"; 
         const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
 
         window.open(urlWhatsApp, '_blank');
       });
 
-      // 5. Confirmación por Formulario Local
-      const form = document.getElementById('reserva-form') as HTMLFormElement;
-      form?.addEventListener('submit', (e) => {
+      // 5. SISTEMA DE RESEÑAS INTERACTIVO
+      const modalResenas = document.getElementById('modal-resenas');
+      const openModalBtn = document.getElementById('open-resenas-hero');
+      const closeModalBtn = document.getElementById('close-modal-resenas');
+      const contenedorResenas = document.getElementById('contenedor-resenas-lista');
+      const formResena = document.getElementById('form-nueva-resena') as HTMLFormElement;
+
+      let calificacionSeleccionada = 5;
+
+      // Reseñas iniciales de demostración
+      let listaResenas = JSON.parse(localStorage.getItem('valentura_resenas') || 'null') || [
+        { nombre: 'Carlos Mendoza', estrellas: 5, comentario: 'Una experiencia increíble. La cabaña es muy cómoda y despertar rodeado de naturaleza no tiene precio.' },
+        { nombre: 'Sofía & Andrés', estrellas: 5, comentario: 'Excelente atención de la comunidad local y la vista desde el balcón de la cabaña es espectacular.' }
+      ];
+
+      function renderizarResenas() {
+        if (!contenedorResenas) return;
+        contenedorResenas.innerHTML = '';
+        
+        listaResenas.forEach((resena: { nombre: string; estrellas: number; comentario: string }) => {
+          const item = document.createElement('div');
+          item.className = 'bg-bosque-dark/80 p-3 rounded-xl border border-white/5 text-xs';
+          item.innerHTML = `
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-semibold text-white">${resena.nombre}</span>
+              <span class="text-dorado-primary">${'★'.repeat(resena.estrellas)}</span>
+            </div>
+            <p class="text-gray-300 font-light">${resena.comentario}</p>
+          `;
+          contenedorResenas.appendChild(item);
+        });
+      }
+
+      openModalBtn?.addEventListener('click', () => {
+        renderizarResenas();
+        modalResenas?.classList.remove('hidden');
+        modalResenas?.classList.add('flex');
+      });
+
+      closeModalBtn?.addEventListener('click', () => {
+        modalResenas?.classList.add('hidden');
+        modalResenas?.classList.remove('flex');
+      });
+
+      // Selección de estrellas
+      const estrellasBtns = document.querySelectorAll('#selector-estrellas .star');
+      estrellasBtns.forEach(star => {
+        star.addEventListener('click', () => {
+          calificacionSeleccionada = parseInt(star.getAttribute('data-rating') || '5');
+          estrellasBtns.forEach((s, idx) => {
+            if (idx < calificacionSeleccionada) {
+              s.classList.add('text-dorado-primary');
+              s.classList.remove('opacity-50');
+            } else {
+              s.classList.remove('text-dorado-primary');
+              s.classList.add('opacity-50');
+            }
+          });
+        });
+      });
+
+      // Publicar reseña
+      formResena?.addEventListener('submit', (e) => {
         e.preventDefault();
-        const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
-        const fechaSalida = (document.getElementById('fecha-salida') as HTMLInputElement)?.value;
+        const nombreInput = (document.getElementById('nombre-resena') as HTMLInputElement)?.value;
+        const comentarioInput = (document.getElementById('comentario-resena') as HTMLTextAreaElement)?.value;
 
-        if (!fechaEntrada || !fechaSalida) {
-          alert('Por favor selecciona las fechas de entrada y salida.');
-          return;
-        }
+        if (!nombreInput || !comentarioInput) return;
 
-        alert(`¡Reserva confirmada con éxito!\n\nFecha de Entrada: ${fechaEntrada}\nFecha de Salida: ${fechaSalida}`);
+        const nuevaResena = {
+          nombre: nombreInput,
+          estrellas: calificacionSeleccionada,
+          comentario: comentarioInput
+        };
+
+        listaResenas.unshift(nuevaResena);
+        localStorage.setItem('valentura_resenas', JSON.stringify(listaResenas));
+
+        renderizarResenas();
+        formResena.reset();
+        alert('¡Gracias! Tu reseña ha sido publicada.');
       });
     </script>
   </body>
