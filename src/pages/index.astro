@@ -169,7 +169,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- SECCIÓN HOSPEDAJE DETALLADO (SOLO 2 CABAÑAS REALES) -->
+    <!-- SECCIÓN HOSPEDAJE DETALLADO (SOLO 2 CABAÑAS REALES CON ENFOQUE AJUSTADO) -->
     <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="flex flex-col md:flex-row justify-between md:items-end mb-8 gap-4">
         <div>
@@ -183,8 +183,8 @@ import '../styles/global.css';
         
         <!-- Cabaña 1: Familiar Bosque -->
         <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between">
-          <div class="h-64 relative overflow-hidden flex items-center justify-center">
-            <img src="/cabaña-principal.jpg" alt="Cabaña Familiar Bosque" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          <div class="h-64 sm:h-72 relative overflow-hidden flex items-center justify-center">
+            <img src="/cabaña-principal.jpg" alt="Cabaña Familiar Bosque" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
             <span class="absolute top-3 right-3 bg-bosque-dark/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] text-dorado-light border border-white/10 z-10">Popular</span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
@@ -204,10 +204,10 @@ import '../styles/global.css';
           </div>
         </div>
 
-        <!-- Cabaña 2: Cabaña Nido -->
+        <!-- Cabaña 2: Cabaña Nido (Con ajuste object-top para mostrar el techo completo) -->
         <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between">
-          <div class="h-64 relative overflow-hidden flex items-center justify-center">
-            <img src="/cabaña-secundaria.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          <div class="h-64 sm:h-72 relative overflow-hidden flex items-center justify-center">
+            <img src="/cabaña-secundaria.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
