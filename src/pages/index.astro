@@ -88,12 +88,12 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- GRID DE EXPERIENCIAS (5 TARJETAS CON TUS IMÁGENES) -->
+    <!-- GRID DE EXPERIENCIAS (5 TARJETAS) -->
     <section id="experiencias" class="max-w-7xl mx-auto px-6 py-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         
         <div class="bg-bosque-card border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[240px] relative">
-          <img src="/hospedaje.jpg" alt="Hospedaje" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 brightness-75" />
+          <img src="/cabaña-principal.jpg" alt="Hospedaje" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 brightness-75" />
           <div class="absolute inset-0 bg-gradient-to-t from-bosque-dark via-bosque-dark/40 to-transparent"></div>
           <div class="relative z-10 p-4 flex justify-between items-start">
             <div class="w-8 h-8 rounded-lg bg-bosque-dark/80 backdrop-blur-md flex items-center justify-center text-sm border border-white/10">🏡</div>
@@ -140,7 +140,6 @@ import '../styles/global.css';
           </div>
         </div>
 
-        <!-- Tarjeta 5: Comunidad (NÍTIDA) -->
         <div class="bg-bosque-card border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-dorado-primary/50 transition duration-300 group cursor-pointer min-h-[240px] relative">
           <img src="/comunidad.jpg" alt="Comunidad" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 brightness-75" />
           <div class="absolute inset-0 bg-gradient-to-t from-bosque-dark via-bosque-dark/40 to-transparent"></div>
@@ -152,6 +151,7 @@ import '../styles/global.css';
             <p class="text-[11px] text-gray-300 mt-0.5 leading-snug">Cultura, tradición y gente local</p>
           </div>
         </div>
+
       </div>
 
       <!-- BANNER PROPÓSITO ECOLÓGICO -->
@@ -169,77 +169,59 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- SECCIÓN HOSPEDAJE DETALLADO -->
+    <!-- SECCIÓN HOSPEDAJE DETALLADO (SOLO 2 CABAÑAS REALES) -->
     <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="flex flex-col md:flex-row justify-between md:items-end mb-8 gap-4">
         <div>
           <h2 class="font-['Cinzel'] text-3xl font-normal text-white">Hospedaje</h2>
           <p class="text-xs text-gray-400 mt-1">Cabañas acogedoras en medio del bosque</p>
         </div>
-
-        <div class="flex flex-wrap gap-2 text-xs">
-          <button class="filter-btn bg-dorado-primary text-bosque-dark font-semibold px-4 py-1.5 rounded-full transition" data-categoria="todos">Todos</button>
-          <button class="filter-btn bg-bosque-card text-gray-300 hover:text-white px-4 py-1.5 rounded-full border border-white/5 transition" data-categoria="cabanas">Cabañas</button>
-          <button class="filter-btn bg-bosque-card text-gray-300 hover:text-white px-4 py-1.5 rounded-full border border-white/5 transition" data-categoria="habitaciones">Habitaciones</button>
-        </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <!-- Grid de 2 columnas para las 2 cabañas -->
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         
-        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between" data-categoria="cabanas">
-          <div class="h-48 relative overflow-hidden flex items-center justify-center">
-            <img src="/hospedaje.jpg" alt="Cabaña Familiar Bosque" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+        <!-- Cabaña 1: Familiar Bosque -->
+        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between">
+          <div class="h-64 relative overflow-hidden flex items-center justify-center">
+            <img src="/cabaña-principal.jpg" alt="Cabaña Familiar Bosque" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <span class="absolute top-3 right-3 bg-bosque-dark/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] text-dorado-light border border-white/10 z-10">Popular</span>
           </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
+          <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Familiar Bosque</h3>
-              <p class="text-xs text-gray-400 mt-1">3 Habitaciones · Sala · Baño con agua caliente · Wi-Fi</p>
+              <h3 class="font-semibold text-lg text-white group-hover:text-dorado-primary transition">Cabaña Familiar Bosque</h3>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">3 Habitaciones · Sala acogedora · Baño privado con agua caliente · Conexión Wi-Fi</p>
             </div>
-            <div class="flex justify-between items-center mt-6">
+            <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/5">
               <div>
-                <span class="text-lg font-bold text-dorado-primary">$70</span>
+                <span class="text-2xl font-bold text-dorado-primary">$70</span>
                 <span class="text-xs text-gray-400">/ noche</span>
               </div>
-              <button class="btn-reservar-card text-xs text-dorado-light hover:underline font-medium" data-nombre="Cabaña Familiar Bosque" data-precio="70">Reservar →</button>
+              <button class="btn-reservar-card bg-dorado-primary/10 hover:bg-dorado-primary hover:text-bosque-dark text-dorado-light px-4 py-2 rounded-xl text-xs font-semibold transition border border-dorado-primary/30" data-nombre="Cabaña Familiar Bosque" data-precio="70">
+                Reservar →
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between" data-categoria="cabanas">
-          <div class="h-48 relative overflow-hidden flex items-center justify-center">
-            <img src="/hospedaje.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-90" />
+        <!-- Cabaña 2: Cabaña Nido -->
+        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between">
+          <div class="h-64 relative overflow-hidden flex items-center justify-center">
+            <img src="/cabaña-secundaria.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
           </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
+          <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Cabaña Nido</h3>
-              <p class="text-xs text-gray-400 mt-1">Perfecta para descanso en parejas · Wi-Fi · Vista al bosque</p>
+              <h3 class="font-semibold text-lg text-white group-hover:text-dorado-primary transition">Cabaña Nido</h3>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Perfecta para descanso en parejas · Vista directa al bosque · Wi-Fi · Ambiente tranquilo</p>
             </div>
-            <div class="flex justify-between items-center mt-6">
+            <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/5">
               <div>
-                <span class="text-lg font-bold text-dorado-primary">$50</span>
+                <span class="text-2xl font-bold text-dorado-primary">$50</span>
                 <span class="text-xs text-gray-400">/ noche</span>
               </div>
-              <button class="btn-reservar-card text-xs text-dorado-light hover:underline font-medium" data-nombre="Cabaña Nido" data-precio="50">Reservar →</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between" data-categoria="habitaciones">
-          <div class="h-48 relative overflow-hidden flex items-center justify-center">
-            <img src="/cascada.jpg" alt="Suite Mirador" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-          </div>
-          <div class="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-semibold text-white group-hover:text-dorado-primary transition">Suite Mirador</h3>
-              <p class="text-xs text-gray-400 mt-1">Vista completa del dosel del bosque · Agua caliente</p>
-            </div>
-            <div class="flex justify-between items-center mt-6">
-              <div>
-                <span class="text-lg font-bold text-dorado-primary">$65</span>
-                <span class="text-xs text-gray-400">/ noche</span>
-              </div>
-              <button class="btn-reservar-card text-xs text-dorado-light hover:underline font-medium" data-nombre="Suite Mirador" data-precio="65">Reservar →</button>
+              <button class="btn-reservar-card bg-dorado-primary/10 hover:bg-dorado-primary hover:text-bosque-dark text-dorado-light px-4 py-2 rounded-xl text-xs font-semibold transition border border-dorado-primary/30" data-nombre="Cabaña Nido" data-precio="50">
+                Reservar →
+              </button>
             </div>
           </div>
         </div>
@@ -280,7 +262,7 @@ import '../styles/global.css';
             <img src="/cascada.jpg" alt="Cascadas" class="w-full h-full object-cover" />
           </div>
           <div class="h-40 rounded-2xl overflow-hidden border border-white/5 relative">
-            <img src="/hospedaje.jpg" alt="Reserva" class="w-full h-full object-cover" />
+            <img src="/cabaña-principal.jpg" alt="Reserva" class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -290,7 +272,7 @@ import '../styles/global.css';
     <section id="comunidad" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="bg-bosque-card rounded-3xl p-8 border border-white/10 grid md:grid-cols-12 gap-8 items-center">
         <div class="md:col-span-5 h-56 rounded-2xl overflow-hidden border border-white/5 relative">
-          <img src="/cascada.jpg" alt="Comunidad local" class="w-full h-full object-cover" />
+          <img src="/comunidad.jpg" alt="Comunidad local" class="w-full h-full object-cover" />
         </div>
         <div class="md:col-span-7">
           <span class="text-dorado-primary text-xs uppercase tracking-widest font-semibold block mb-1">Impacto Social</span>
@@ -445,24 +427,6 @@ import '../styles/global.css';
             const targetElement = document.querySelector(targetId);
             targetElement?.scrollIntoView({ behavior: 'smooth' });
           }
-        });
-      });
-
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const cardsHospedaje = document.querySelectorAll('.card-hospedaje');
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('bg-dorado-primary', 'text-bosque-dark', 'font-semibold'));
-          btn.classList.add('bg-dorado-primary', 'text-bosque-dark', 'font-semibold');
-          const categoria = btn.getAttribute('data-categoria');
-          cardsHospedaje.forEach(card => {
-            const el = card as HTMLElement;
-            if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
-              el.style.display = 'flex';
-            } else {
-              el.style.display = 'none';
-            }
-          });
         });
       });
 
