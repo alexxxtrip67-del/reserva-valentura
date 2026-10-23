@@ -169,7 +169,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- SECCIÓN HOSPEDAJE DETALLADO (SOLO 2 CABAÑAS REALES CON ENFOQUE AJUSTADO) -->
+    <!-- SECCIÓN HOSPEDAJE DETALLADO (2 CABAÑAS REALES CON BOTÓN DETALLES E INTERIOR) -->
     <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="flex flex-col md:flex-row justify-between md:items-end mb-8 gap-4">
         <div>
@@ -192,19 +192,25 @@ import '../styles/global.css';
               <h3 class="font-semibold text-lg text-white group-hover:text-dorado-primary transition">Cabaña Familiar Bosque</h3>
               <p class="text-xs text-gray-400 mt-2 leading-relaxed">3 Habitaciones · Sala acogedora · Baño privado con agua caliente · Conexión Wi-Fi</p>
             </div>
-            <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/5">
-              <div>
-                <span class="text-2xl font-bold text-dorado-primary">$70</span>
-                <span class="text-xs text-gray-400">/ noche</span>
-              </div>
-              <button class="btn-reservar-card bg-dorado-primary/10 hover:bg-dorado-primary hover:text-bosque-dark text-dorado-light px-4 py-2 rounded-xl text-xs font-semibold transition border border-dorado-primary/30" data-nombre="Cabaña Familiar Bosque" data-precio="70">
-                Reservar →
+            
+            <div class="flex flex-wrap sm:flex-nowrap justify-between items-center mt-6 pt-4 border-t border-white/5 gap-3">
+              <button class="btn-detalles bg-bosque-dark hover:bg-white/10 text-gray-300 hover:text-white px-3.5 py-2 rounded-xl text-xs font-medium transition border border-white/10" data-cabana="familiar">
+                👁️ Ver detalles e interior
               </button>
+              <div class="flex items-center gap-3">
+                <div>
+                  <span class="text-xl font-bold text-dorado-primary">$70</span>
+                  <span class="text-[10px] text-gray-400">/noche</span>
+                </div>
+                <button class="btn-reservar-card bg-dorado-primary/10 hover:bg-dorado-primary hover:text-bosque-dark text-dorado-light px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-dorado-primary/30" data-nombre="Cabaña Familiar Bosque" data-precio="70">
+                  Reservar →
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Cabaña 2: Cabaña Nido (Con ajuste object-top para mostrar el techo completo) -->
+        <!-- Cabaña 2: Cabaña Nido ($40/noche con encuadre object-top) -->
         <div class="card-hospedaje bg-bosque-card rounded-2xl overflow-hidden border border-white/5 hover:border-dorado-primary/40 transition group flex flex-col justify-between">
           <div class="h-64 sm:h-72 relative overflow-hidden flex items-center justify-center">
             <img src="/cabaña-secundaria.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
@@ -212,16 +218,22 @@ import '../styles/global.css';
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <h3 class="font-semibold text-lg text-white group-hover:text-dorado-primary transition">Cabaña Nido</h3>
-              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Perfecta para descanso en parejas · Vista directa al bosque · Wi-Fi · Ambiente tranquilo</p>
+              <p class="text-xs text-gray-400 mt-2 leading-relaxed">Perfecta para descanso · 1 Habitación amplia con 2 camas · Sala acogedora · Wi-Fi</p>
             </div>
-            <div class="flex justify-between items-center mt-6 pt-4 border-t border-white/5">
-              <div>
-                <span class="text-2xl font-bold text-dorado-primary">$40</span>
-                <span class="text-xs text-gray-400">/ noche</span>
-              </div>
-              <button class="btn-reservar-card bg-dorado-primary/10 hover:bg-dorado-primary hover:text-bosque-dark text-dorado-light px-4 py-2 rounded-xl text-xs font-semibold transition border border-dorado-primary/30" data-nombre="Cabaña Nido" data-precio="40">
-                Reservar →
+            
+            <div class="flex flex-wrap sm:flex-nowrap justify-between items-center mt-6 pt-4 border-t border-white/5 gap-3">
+              <button class="btn-detalles bg-bosque-dark hover:bg-white/10 text-gray-300 hover:text-white px-3.5 py-2 rounded-xl text-xs font-medium transition border border-white/10" data-cabana="nido">
+                👁️ Ver detalles e interior
               </button>
+              <div class="flex items-center gap-3">
+                <div>
+                  <span class="text-xl font-bold text-dorado-primary">$40</span>
+                  <span class="text-[10px] text-gray-400">/noche</span>
+                </div>
+                <button class="btn-reservar-card bg-dorado-primary/10 hover:bg-dorado-primary hover:text-bosque-dark text-dorado-light px-3.5 py-2 rounded-xl text-xs font-semibold transition border border-dorado-primary/30" data-nombre="Cabaña Nido" data-precio="40">
+                  Reservar →
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -381,6 +393,36 @@ import '../styles/global.css';
       <p>© 2026 Reserva Ecológica Valentura. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- MODAL DE DETALLES E INTERIOR DE CABAÑAS -->
+    <div id="modal-cabana-detalles" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+      <div class="bg-bosque-card border border-white/10 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        
+        <button id="close-modal-detalles" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold">✕</button>
+
+        <span class="text-dorado-primary text-xs uppercase tracking-widest font-semibold block mb-1">Distribución del espacio</span>
+        <h3 id="modal-cabana-titulo" class="font-['Cinzel'] text-2xl text-white mb-4">Detalles de la Cabaña</h3>
+
+        <p id="modal-cabana-descripcion" class="text-xs text-gray-300 leading-relaxed mb-6 font-light bg-bosque-dark/60 p-4 rounded-xl border border-white/5"></p>
+
+        <div class="mb-6">
+          <h4 class="text-xs font-semibold text-dorado-light uppercase tracking-wider mb-3">Habitaciones y Comodidades</h4>
+          <ul id="modal-cabana-lista" class="grid sm:grid-cols-2 gap-2 text-xs text-gray-300"></ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-semibold text-dorado-light uppercase tracking-wider mb-3">Vista del Interior</h4>
+          <div id="modal-cabana-galeria" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-white/10 flex justify-end">
+          <button id="modal-btn-reservar-directo" class="bg-dorado-primary hover:bg-dorado-light text-bosque-dark px-6 py-2.5 rounded-xl text-xs font-bold transition">
+            Ir a reservar esta cabaña →
+          </button>
+        </div>
+
+      </div>
+    </div>
+
     <!-- MODAL DE RESEÑAS Y TESTIMONIOS -->
     <div id="modal-resenas" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-lg rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -419,6 +461,7 @@ import '../styles/global.css';
       let alojamientoSeleccionado = 'Cabaña Familiar Bosque';
       let precioSeleccionado = 70;
 
+      // Navegación
       const navLinks = document.querySelectorAll('header nav a, a[href^="#"]');
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -430,6 +473,7 @@ import '../styles/global.css';
         });
       });
 
+      // Selección de Reserva
       const actionBtns = document.querySelectorAll('.btn-reservar-card');
       actionBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -445,6 +489,7 @@ import '../styles/global.css';
         });
       });
 
+      // Reserva por WhatsApp
       document.getElementById('btn-whatsapp-reserva')?.addEventListener('click', () => {
         const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
         const fechaSalida = (document.getElementById('fecha-salida') as HTMLInputElement)?.value;
@@ -459,6 +504,96 @@ import '../styles/global.css';
         window.open(`https://wa.me/593995617678?text=${encodeURIComponent(mensaje)}`, '_blank');
       });
 
+      // Modal Detalles Cabañas
+      const modalDetalles = document.getElementById('modal-cabana-detalles');
+      const closeDetallesBtn = document.getElementById('close-modal-detalles');
+      const modalTitulo = document.getElementById('modal-cabana-titulo');
+      const modalDesc = document.getElementById('modal-cabana-descripcion');
+      const modalLista = document.getElementById('modal-cabana-lista');
+      const modalGaleria = document.getElementById('modal-cabana-galeria');
+      const btnReservarDirecto = document.getElementById('modal-btn-reservar-directo');
+
+      const datosCabanas: Record<string, { titulo: string; descripcion: string; caracteristicas: string[]; imagenes: string[]; nombreReserva: string; precio: number }> = {
+        familiar: {
+          titulo: 'Cabaña Familiar Bosque ($70/noche)',
+          descripcion: 'Espaciosa cabaña de madera ideal para familias o grupos de amigos. Ofrece una distribución amplia con 3 dormitorios privados y una sala acogedora para descansar.',
+          caracteristicas: [
+            '🚪 3 Habitaciones privadas',
+            '🛋️ Sala de estar acogedora',
+            '🚿 Baño privado con agua caliente',
+            '📶 Conexión Wi-Fi de alta velocidad',
+            '🪟 Ventanales con vista al jardín',
+            '🌳 Entorno natural exclusivo'
+          ],
+          imagenes: ['/cabaña-principal.jpg', '/hospedaje.jpg', '/hero-background-ia.jpg'],
+          nombreReserva: 'Cabaña Familiar Bosque',
+          precio: 70
+        },
+        nido: {
+          titulo: 'Cabaña Nido ($40/noche)',
+          descripcion: 'Acogedora cabaña pensada para descanso en pareja o pequeños grupos. Dispone de 1 habitación espaciosa equipada con 2 camas confortables y sala de estar.',
+          caracteristicas: [
+            '🛏️ 1 Habitación amplia',
+            '🛌 2 Camas confortables',
+            '🛋️ Sala de estar integrada',
+            '🚿 Baño privado con agua caliente',
+            '📶 Conexión Wi-Fi',
+            '🌿 Vista panorámica al bosque'
+          ],
+          imagenes: ['/cabaña-secundaria.jpg', '/hospedaje.jpg', '/cascada.jpg'],
+          nombreReserva: 'Cabaña Nido',
+          precio: 40
+        }
+      };
+
+      document.querySelectorAll('.btn-detalles').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tipo = btn.getAttribute('data-cabana') || 'familiar';
+          const info = datosCabanas[tipo];
+
+          if (info && modalTitulo && modalDesc && modalLista && modalGaleria) {
+            modalTitulo.textContent = info.titulo;
+            modalDesc.textContent = info.descripcion;
+
+            modalLista.innerHTML = info.caracteristicas.map(item => `
+              <li class="bg-bosque-dark/80 p-2.5 rounded-xl border border-white/5 flex items-center">${item}</li>
+            `).join('');
+
+            modalGaleria.innerHTML = info.imagenes.map(img => `
+              <div class="h-28 rounded-xl overflow-hidden border border-white/10">
+                <img src="${img}" class="w-full h-full object-cover hover:scale-105 transition duration-300" />
+              </div>
+            `).join('');
+
+            if (btnReservarDirecto) {
+              btnReservarDirecto.onclick = () => {
+                alojamientoSeleccionado = info.nombreReserva;
+                precioSeleccionado = info.precio;
+                modalDetalles?.classList.add('hidden');
+                modalDetalles?.classList.remove('flex');
+                document.querySelector('#reserva')?.scrollIntoView({ behavior: 'smooth' });
+                
+                const elementoNombre = document.getElementById('resumen-nombre');
+                const elementoPrecio = document.getElementById('resumen-precio');
+                const elementoTotal = document.getElementById('resumen-total');
+                if (elementoNombre) elementoNombre.textContent = `${alojamientoSeleccionado} (2 noches)`;
+                if (elementoPrecio) elementoPrecio.textContent = `$${precioSeleccionado * 2}`;
+                if (elementoTotal) elementoTotal.textContent = `$${precioSeleccionado * 2 + 10}`;
+              };
+            }
+
+            modalDetalles?.classList.remove('hidden');
+            modalDetalles?.classList.add('flex');
+          }
+        });
+      });
+
+      closeDetallesBtn?.addEventListener('click', () => {
+        modalDetalles?.classList.add('hidden');
+        modalDetalles?.classList.remove('flex');
+      });
+
+      // Modal Reseñas
       const modalResenas = document.getElementById('modal-resenas');
       const contenedorResenas = document.getElementById('contenedor-resenas-lista');
       const formResena = document.getElementById('form-nueva-resena') as HTMLFormElement;
