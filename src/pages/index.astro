@@ -52,7 +52,7 @@ import '../styles/global.css';
 
       <div class="max-w-7xl mx-auto w-full relative z-20 grid md:grid-cols-12 gap-8 items-center">
         <div class="md:col-span-8">
-          <span class="text-dorado-light text-xs tracking-widest uppercase mb-3 block font-medium tracking-widest">🌿 Bienvenidos a la experiencia natural</span>
+          <span class="text-dorado-light text-xs tracking-widest uppercase mb-3 block font-medium">🌿 Bienvenidos a la experiencia natural</span>
           <h1 class="font-['Cinzel'] text-4xl sm:text-5xl md:text-6xl font-normal text-white leading-tight mb-4 drop-shadow-md">
             Reserva Ecológica <br/>
             <span class="text-dorado-primary font-bold italic">Valentura</span>
@@ -82,7 +82,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- GRID DE EXPERIENCIAS (SIN ÍCONOS FLOTANTES) -->
+    <!-- GRID DE EXPERIENCIAS (LIMPIO, SIN ÍCONOS FLOTANTES) -->
     <section id="experiencias" class="max-w-7xl mx-auto px-6 py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         
@@ -134,7 +134,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- SECCIÓN HOSPEDAJE (TÍTULO MÁS GRANDE Y ELEGANTE) -->
+    <!-- SECCIÓN HOSPEDAJE (TÍTULO ELEGANTE Y GRANDE) -->
     <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/5">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="text-dorado-light text-xs tracking-widest uppercase font-semibold mb-2 block">Alojamiento Exclusivo</span>
@@ -173,7 +173,7 @@ import '../styles/global.css';
           </div>
         </div>
 
-        <!-- Cabaña Nido ($40/noche con fotos num. 2) -->
+        <!-- Cabaña Nido ($40/noche) -->
         <div class="card-hospedaje bg-bosque-card rounded-3xl overflow-hidden border border-white/10 hover:border-dorado-primary/50 transition group flex flex-col justify-between shadow-2xl">
           <div class="h-72 relative overflow-hidden flex items-center justify-center">
             <img src="/cabaña-secundaria.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
@@ -363,12 +363,12 @@ import '../styles/global.css';
       </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/593995617678?text=Hola%20Reserva%20Ecológica%20Valentura%20🌿,%20deseo%20más%20información." target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition hover:scale-110" title="Escríbenos por WhatsApp">
+    <!-- BOTÓN FLOTANTE DE WHATSAPP IDÉNTICO AL EJEMPLO -->
+    <a href="https://wa.me/593995617678?text=Hola%20Reserva%20Ecológica%20Valentura%20🌿,%20deseo%20más%20información." target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#22bf5b] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition hover:scale-110" title="Escríbenos por WhatsApp">
       💬
     </a>
 
-    <!-- MODAL DE DETALLES E INTERIOR DE CABAÑAS (CON BOTÓN DE REGRESO) -->
+    <!-- MODAL DE DETALLES E INTERIOR DE CABAÑAS (CON BOTÓN DE REGRESO Y FOTOS ESPECÍFICAS) -->
     <div id="modal-cabana-detalles" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         
@@ -401,7 +401,7 @@ import '../styles/global.css';
       </div>
     </div>
 
-    <!-- MODAL DE RESEÑAS Y TESTIMONIOS (GLOBALMENTE SINCRONIZADAS) -->
+    <!-- MODAL DE RESEÑAS Y TESTIMONIOS (SINCRONIZADO GLOBALMENTE) -->
     <div id="modal-resenas" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-lg rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         <button id="close-modal-resenas" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold">✕</button>
@@ -504,7 +504,7 @@ import '../styles/global.css';
         window.open(`https://wa.me/593995617678?text=${encodeURIComponent(mensaje)}`, '_blank');
       });
 
-      // Modal Detalles Cabañas (con fotos num. 2 para Nido)
+      // Modal Detalles Cabañas (con imágenes exactas solicitadas)
       const modalDetalles = document.getElementById('modal-cabana-detalles');
       const closeDetallesBtn = document.getElementById('close-modal-detalles');
       const modalRegresarBtn = document.getElementById('modal-btn-regresar');
@@ -519,14 +519,14 @@ import '../styles/global.css';
           titulo: 'Cabaña Familiar Bosque ($70/noche)',
           descripcion: 'Espaciosa cabaña de madera ideal para familias o grupos de amigos. Ofrece una distribución amplia con 3 dormitorios privados y una sala acogedora para descansar.',
           caracteristicas: [
-            '🚪 3 Habitaciones privadas',
-            '🛋️ Sala de estar acogedora',
+            '🚪 Cabaña principal',
+            '🛋️ Sala acogedora',
+            '🛋️ Sala de estar',
             '🚿 Baño privado con agua caliente',
             '📶 Conexión Wi-Fi de alta velocidad',
-            '🪟 Ventanales con vista al jardín',
             '🌳 Entorno natural exclusivo'
           ],
-          imagenes: ['/cabaña-principal.jpg', '/hospedaje.jpg', '/hero-background-ia.jpg'],
+          imagenes: ['/cabaña-principal.jpg', '/sala-acogedora.jpg', '/sala-estar.jpg'],
           nombreReserva: 'Cabaña Familiar Bosque',
           precio: 70
         },
@@ -535,7 +535,7 @@ import '../styles/global.css';
           descripcion: 'Acogedora cabaña pensada para descanso en pareja o pequeños grupos. Dispone de 1 habitación espaciosa equipada con 2 camas confortables y sala de estar.',
           caracteristicas: [
             '🛏️ 1 Habitación amplia',
-            '🛌 2 Camas confortables (2-camas-confortables.jpg)',
+            '🛌 2 Camas confortables',
             '🛋️ Sala de estar integrada',
             '🚿 Baño privado con agua caliente',
             '📶 Conexión Wi-Fi',
