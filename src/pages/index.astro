@@ -40,7 +40,7 @@ import '../styles/global.css';
       </div>
     </header>
 
-    <!-- HERO SECTION MEJORADO -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="relative min-h-[80vh] flex items-center px-6 py-12 border-b border-white/5 overflow-hidden">
       <img 
         src="/hero-background-ia.jpg" 
@@ -82,7 +82,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- GRID DE EXPERIENCIAS (LIMPIO, SIN ÍCONOS FLOTANTES) -->
+    <!-- GRID DE EXPERIENCIAS -->
     <section id="experiencias" class="max-w-7xl mx-auto px-6 py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         
@@ -134,7 +134,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- SECCIÓN HOSPEDAJE (TÍTULO ELEGANTE Y GRANDE) -->
+    <!-- SECCIÓN HOSPEDAJE -->
     <section id="hospedaje" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/5">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="text-dorado-light text-xs tracking-widest uppercase font-semibold mb-2 block">Alojamiento Exclusivo</span>
@@ -173,7 +173,7 @@ import '../styles/global.css';
           </div>
         </div>
 
-        <!-- Cabaña Nido ($40/noche) -->
+        <!-- Cabaña Nido -->
         <div class="card-hospedaje bg-bosque-card rounded-3xl overflow-hidden border border-white/10 hover:border-dorado-primary/50 transition group flex flex-col justify-between shadow-2xl">
           <div class="h-72 relative overflow-hidden flex items-center justify-center">
             <img src="/cabaña-secundaria.jpg" alt="Cabaña Nido" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
@@ -263,7 +263,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- RESERVA Y MÉTODO DE PAGO (SIN IMPUESTOS DE $10) -->
+    <!-- RESERVA Y MÉTODO DE PAGO (CON SELECTOR DE NOCHES INTERACTIVO) -->
     <section id="reserva" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="grid lg:grid-cols-12 gap-8">
         
@@ -282,16 +282,23 @@ import '../styles/global.css';
               </div>
 
               <div>
-                <label class="text-xs text-dorado-light font-medium block mb-2">2. Número de huéspedes</label>
-                <div class="grid grid-cols-2 gap-2">
-                  <select id="adultos-select" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary">
+                <label class="text-xs text-dorado-light font-medium block mb-2">2. Número de noches y huéspedes</label>
+                <div class="grid grid-cols-3 gap-2">
+                  <select id="noches-select" class="bg-bosque-dark border border-white/10 rounded-xl px-2 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary">
+                    <option value="1">1 Noche</option>
+                    <option value="2" selected>2 Noches</option>
+                    <option value="3">3 Noches</option>
+                    <option value="4">4 Noches</option>
+                    <option value="5">5 Noches</option>
+                  </select>
+                  <select id="adultos-select" class="bg-bosque-dark border border-white/10 rounded-xl px-2 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary">
                     <option>1 Adulto</option>
                     <option selected>2 Adultos</option>
                     <option>3 Adultos</option>
                     <option>4 Adultos</option>
                     <option>5+ Adultos</option>
                   </select>
-                  <select id="ninos-select" class="bg-bosque-dark border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary">
+                  <select id="ninos-select" class="bg-bosque-dark border border-white/10 rounded-xl px-2 py-2 text-xs text-white focus:outline-none focus:border-dorado-primary">
                     <option selected>0 Niños</option>
                     <option>1 Niño</option>
                     <option>2 Niños</option>
@@ -363,12 +370,12 @@ import '../styles/global.css';
       </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP IDÉNTICO AL EJEMPLO -->
-    <a href="https://wa.me/593995617678?text=Hola%20Reserva%20Ecológica%20Valentura%20🌿,%20deseo%20más%20información." target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#22bf5b] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition hover:scale-110" title="Escríbenos por WhatsApp">
-      💬
+    <!-- BOTÓN FLOTANTE DE WHATSAPP REDONDO IDÉNTICO A TU EJEMPLO -->
+    <a href="https://wa.me/593995617678?text=Hola%20Reserva%20Ecológica%20Valentura%20🌿,%20deseo%20más%20información." target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition hover:scale-110" title="Escríbenos por WhatsApp">
+      <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="text-white fill-white"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
     </a>
 
-    <!-- MODAL DE DETALLES E INTERIOR DE CABAÑAS (CON BOTÓN DE REGRESO Y FOTOS ESPECÍFICAS) -->
+    <!-- MODAL DE DETALLES E INTERIOR DE CABAÑAS (CON CAMA PRINCIPAL) -->
     <div id="modal-cabana-detalles" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         
@@ -401,7 +408,7 @@ import '../styles/global.css';
       </div>
     </div>
 
-    <!-- MODAL DE RESEÑAS Y TESTIMONIOS (SINCRONIZADO GLOBALMENTE) -->
+    <!-- MODAL DE RESEÑAS -->
     <div id="modal-resenas" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-lg rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         <button id="close-modal-resenas" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold">✕</button>
@@ -440,6 +447,7 @@ import '../styles/global.css';
     <script>
       let alojamientoSeleccionado = 'Cabaña Familiar Bosque';
       let precioSeleccionado = 70;
+      let numeroNoches = 2;
 
       // Resaltar sección activa en el menú al hacer scroll
       const sections = document.querySelectorAll('section[id]');
@@ -473,6 +481,22 @@ import '../styles/global.css';
         });
       });
 
+      function actualizarResumen() {
+        const elementoNombre = document.getElementById('resumen-nombre');
+        const elementoPrecio = document.getElementById('resumen-precio');
+        const elementoTotal = document.getElementById('resumen-total');
+        if (elementoNombre) elementoNombre.textContent = `${alojamientoSeleccionado} (${numeroNoches} ${numeroNoches === 1 ? 'noche' : 'noches'})`;
+        if (elementoPrecio) elementoPrecio.textContent = `$${precioSeleccionado * numeroNoches}`;
+        if (elementoTotal) elementoTotal.textContent = `$${precioSeleccionado * numeroNoches}`;
+      }
+
+      // Cambio en el selector de noches
+      const nochesSelect = document.getElementById('noches-select') as HTMLSelectElement;
+      nochesSelect?.addEventListener('change', () => {
+        numeroNoches = parseInt(nochesSelect.value);
+        actualizarResumen();
+      });
+
       // Selección de Reserva
       const actionBtns = document.querySelectorAll('.btn-reservar-card');
       actionBtns.forEach(btn => {
@@ -480,16 +504,11 @@ import '../styles/global.css';
           alojamientoSeleccionado = btn.getAttribute('data-nombre') || 'Alojamiento Valentura';
           precioSeleccionado = parseInt(btn.getAttribute('data-precio') || '70');
           document.querySelector('#reserva')?.scrollIntoView({ behavior: 'smooth' });
-          const elementoNombre = document.getElementById('resumen-nombre');
-          const elementoPrecio = document.getElementById('resumen-precio');
-          const elementoTotal = document.getElementById('resumen-total');
-          if (elementoNombre) elementoNombre.textContent = `${alojamientoSeleccionado} (2 noches)`;
-          if (elementoPrecio) elementoPrecio.textContent = `$${precioSeleccionado * 2}`;
-          if (elementoTotal) elementoTotal.textContent = `$${precioSeleccionado * 2}`;
+          actualizarResumen();
         });
       });
 
-      // Reserva por WhatsApp (sin $10 de impuestos)
+      // Reserva por WhatsApp
       document.getElementById('btn-whatsapp-reserva')?.addEventListener('click', () => {
         const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
         const fechaSalida = (document.getElementById('fecha-salida') as HTMLInputElement)?.value;
@@ -500,11 +519,11 @@ import '../styles/global.css';
           alert('Por favor selecciona las fechas de entrada y salida.');
           return;
         }
-        const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 Alojamiento: ${alojamientoSeleccionado}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Método de Pago: ${metodoPago}\n💰 Total: $${precioSeleccionado * 2}\n\n¿Tienen disponibilidad?`;
+        const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 Alojamiento: ${alojamientoSeleccionado}\n🌙 Estancia: ${numeroNoches} ${numeroNoches === 1 ? 'noche' : 'noches'}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Método de Pago: ${metodoPago}\n💰 Total: $${precioSeleccionado * numeroNoches}\n\n¿Tienen disponibilidad?`;
         window.open(`https://wa.me/593995617678?text=${encodeURIComponent(mensaje)}`, '_blank');
       });
 
-      // Modal Detalles Cabañas (con imágenes exactas solicitadas)
+      // Modal Detalles Cabañas (con /cama-principal.jpg incluida)
       const modalDetalles = document.getElementById('modal-cabana-detalles');
       const closeDetallesBtn = document.getElementById('close-modal-detalles');
       const modalRegresarBtn = document.getElementById('modal-btn-regresar');
@@ -519,14 +538,14 @@ import '../styles/global.css';
           titulo: 'Cabaña Familiar Bosque ($70/noche)',
           descripcion: 'Espaciosa cabaña de madera ideal para familias o grupos de amigos. Ofrece una distribución amplia con 3 dormitorios privados y una sala acogedora para descansar.',
           caracteristicas: [
+            '🛏️ Cama principal',
             '🚪 Cabaña principal',
             '🛋️ Sala acogedora',
             '🛋️ Sala de estar',
             '🚿 Baño privado con agua caliente',
-            '📶 Conexión Wi-Fi de alta velocidad',
-            '🌳 Entorno natural exclusivo'
+            '📶 Conexión Wi-Fi de alta velocidad'
           ],
-          imagenes: ['/cabaña-principal.jpg', '/sala-acogedora.jpg', '/sala-estar.jpg'],
+          imagenes: ['/cama-principal.jpg', '/cabaña-principal.jpg', '/sala-acogedora.jpg', '/sala-estar.jpg'],
           nombreReserva: 'Cabaña Familiar Bosque',
           precio: 70
         },
@@ -573,13 +592,7 @@ import '../styles/global.css';
                 modalDetalles?.classList.add('hidden');
                 modalDetalles?.classList.remove('flex');
                 document.querySelector('#reserva')?.scrollIntoView({ behavior: 'smooth' });
-                
-                const elementoNombre = document.getElementById('resumen-nombre');
-                const elementoPrecio = document.getElementById('resumen-precio');
-                const elementoTotal = document.getElementById('resumen-total');
-                if (elementoNombre) elementoNombre.textContent = `${alojamientoSeleccionado} (2 noches)`;
-                if (elementoPrecio) elementoPrecio.textContent = `$${precioSeleccionado * 2}`;
-                if (elementoTotal) elementoTotal.textContent = `$${precioSeleccionado * 2}`;
+                actualizarResumen();
               };
             }
 
@@ -600,7 +613,7 @@ import '../styles/global.css';
         document.querySelector('#hospedaje')?.scrollIntoView({ behavior: 'smooth' });
       });
 
-      // Modal Reseñas (Sincronizado globalmente en LocalStorage)
+      // Modal Reseñas
       const modalResenas = document.getElementById('modal-resenas');
       const contenedorResenas = document.getElementById('contenedor-resenas-lista');
       const formResena = document.getElementById('form-nueva-resena') as HTMLFormElement;
