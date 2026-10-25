@@ -52,7 +52,7 @@ import '../styles/global.css';
 
       <div class="max-w-7xl mx-auto w-full relative z-20 grid md:grid-cols-12 gap-8 items-center">
         <div class="md:col-span-8">
-          <span class="text-dorado-light text-xs tracking-widest uppercase mb-3 block font-medium">🌿 Bienvenidos a la experiencia natural</span>
+          <span class="text-dorado-light text-xs tracking-widest uppercase mb-3 block font-medium">Bienvenidos a la experiencia natural</span>
           <h1 class="font-['Cinzel'] text-4xl sm:text-5xl md:text-6xl font-normal text-white leading-tight mb-4 drop-shadow-md">
             Reserva Ecológica <br/>
             <span class="text-dorado-primary font-bold italic">Valentura</span>
@@ -263,7 +263,7 @@ import '../styles/global.css';
       </div>
     </section>
 
-    <!-- RESERVA Y MÉTODO DE PAGO (CON SELECTOR DE CABAÑA E INTERACTIVIDAD) -->
+    <!-- RESERVA Y MÉTODO DE PAGO -->
     <section id="reserva" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
       <div class="grid lg:grid-cols-12 gap-8">
         
@@ -273,7 +273,6 @@ import '../styles/global.css';
 
           <form id="reserva-form" class="space-y-6">
             
-            <!-- Selector de Cabaña -->
             <div>
               <label class="text-xs text-dorado-light font-medium block mb-2">Selecciona tu Cabaña</label>
               <select id="cabana-select" class="w-full bg-bosque-dark border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-dorado-primary">
@@ -380,12 +379,12 @@ import '../styles/global.css';
       </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP REDONDO -->
-    <a href="https://wa.me/593995617678?text=Hola%20Reserva%20Ecológica%20Valentura%20🌿,%20deseo%20más%20información." target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition hover:scale-110" title="Escríbenos por WhatsApp">
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/593995617678?text=Hola%20Reserva%20Ecologica%20Valentura,%20deseo%20mas%20informacion." target="_blank" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition hover:scale-110" title="Escríbenos por WhatsApp">
       <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="text-white fill-white"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
     </a>
 
-    <!-- MODAL DE DETALLES E INTERIOR (CON CAMA PRINCIPAL PRIMERO) -->
+    <!-- MODAL DE DETALLES E INTERIOR -->
     <div id="modal-cabana-detalles" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
       <div class="bg-bosque-card border border-white/10 w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         
@@ -549,7 +548,7 @@ import '../styles/global.css';
         });
       });
 
-      // WhatsApp
+      // WhatsApp profesional (sin emojis conflictivos)
       document.getElementById('btn-whatsapp-reserva')?.addEventListener('click', () => {
         const fechaEntrada = (document.getElementById('fecha-entrada') as HTMLInputElement)?.value;
         const fechaSalida = (document.getElementById('fecha-salida') as HTMLInputElement)?.value;
@@ -560,7 +559,7 @@ import '../styles/global.css';
           alert('Por favor selecciona las fechas de entrada y salida.');
           return;
         }
-        const mensaje = `Hola Reserva Ecológica Valentura 🌿,\n\nDeseo realizar la siguiente reserva:\n\n🏡 Alojamiento: ${alojamientoSeleccionado}\n🌙 Estancia: ${numeroNoches} ${numeroNoches === 1 ? 'noche' : 'noches'}\n📅 Entrada: ${fechaEntrada}\n📅 Salida: ${fechaSalida}\n👥 Huéspedes: ${adultos}, ${ninos}\n💳 Método de Pago: ${metodoPago}\n💰 Total: $${precioSeleccionado * numeroNoches}\n\n¿Tienen disponibilidad?`;
+        const mensaje = `Hola Reserva Ecologica Valentura,\n\nDeseo realizar la siguiente reserva:\n\n- Alojamiento: ${alojamientoSeleccionado}\n- Estancia: ${numeroNoches} ${numeroNoches === 1 ? 'noche' : 'noches'}\n- Entrada: ${fechaEntrada}\n- Salida: ${fechaSalida}\n- Huespedes: ${adultos}, ${ninos}\n- Metodo de Pago: ${metodoPago}\n- Total: $${precioSeleccionado * numeroNoches}\n\nTienen disponibilidad?`;
         window.open(`https://wa.me/593995617678?text=${encodeURIComponent(mensaje)}`, '_blank');
       });
 
@@ -579,12 +578,12 @@ import '../styles/global.css';
           titulo: 'Cabaña Familiar Bosque ($70/noche)',
           descripcion: 'Espaciosa cabaña de madera ideal para familias o grupos de amigos. Ofrece una distribución amplia con 3 dormitorios privados y una sala acogedora para descansar.',
           caracteristicas: [
-            '🚪 Cabaña principal',
-            '🛏️ Cama principal',
-            '🛋️ Sala acogedora',
-            '🛋️ Sala de estar',
-            '🚿 Baño privado con agua caliente',
-            '📶 Conexión Wi-Fi de alta velocidad'
+            'Cabaña principal',
+            'Cama principal',
+            'Sala acogedora',
+            'Sala de estar',
+            'Bano privado con agua caliente',
+            'Conexion Wi-Fi de alta velocidad'
           ],
           imagenes: ['/cabaña-principal.jpg', '/cama-principal.jpg', '/sala-acogedora.jpg', '/sala-estar.jpg'],
           nombreReserva: 'Cabaña Familiar Bosque',
@@ -594,12 +593,12 @@ import '../styles/global.css';
           titulo: 'Cabaña Nido ($40/noche)',
           descripcion: 'Acogedora cabaña pensada para descanso en pareja o pequeños grupos. Dispone de 1 habitación espaciosa equipada con 2 camas confortables y sala de estar.',
           caracteristicas: [
-            '🛏️ 1 Habitación amplia',
-            '🛌 2 Camas confortables',
-            '🛋️ Sala de estar integrada',
-            '🚿 Baño privado con agua caliente',
-            '📶 Conexión Wi-Fi',
-            '🌿 Vista panorámica al bosque'
+            '1 Habitacion amplia',
+            '2 Camas confortables',
+            'Sala de estar integrada',
+            'Bano privado con agua caliente',
+            'Conexion Wi-Fi',
+            'Vista panoramica al bosque'
           ],
           imagenes: ['/cabaña-secundaria.jpg', '/2-camas-confortables.jpg', '/sala-estar-2.jpg', '/vista-bosque-2.jpg'],
           nombreReserva: 'Cabaña Nido',
